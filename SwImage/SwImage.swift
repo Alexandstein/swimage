@@ -12,11 +12,12 @@ class SwImage{
     /**
      Fetch an NSImage from a given path
      */
-    class func fetchImageFromPath(_ path : URL) -> NSImage{
-        let outputImage = NSImage(contentsOf: path)!
+    class func fetchImageFromPath(_ path : URL) -> NSImage?{
+        let outputImage = NSImage(contentsOf: path)
         
         return outputImage
     }
+    
     
     /**
      Resize an NSImage
@@ -44,7 +45,12 @@ class SwImage{
     }
     
     /**
-     Writes image out to a png file
+     Writes image out to a file. Valid image file extensions are `jpg`/`jpeg`, `png`, `gif`, `tiff`, and `bmp`.
+     
+     - Parameter image: NSImage to write out to a file.
+     - Parameter outputPath: The path and file name to write the image to.
+     
+     - Returns: `true` if operation was succesful, `false` if otherwise
      */
     class func writeImageToFile(_ image : NSImage, outputPath : URL) -> Bool{
         
@@ -53,14 +59,35 @@ class SwImage{
         let bitmap = NSBitmapImageRep(cgImage: cgRef)
         bitmap.size = image.size
         
-        //Generate a png from the bitmap data
-        let pngData = bitmap.representation(using: NSPNGFileType, properties: [:])
+        var imageData : Data?
+        
+        //Check the extension
+        switch outputPath.pathExtension.lowercased() {
+        case "jpg":
+            fallthrough
+        case "jpeg":
+            imageData = bitmap.representation(using: NSJPEGFileType, properties: [:])
+        case "gif":
+            imageData = bitmap.representation(using: NSGIFFileType, properties: [:])
+        case "png":
+            imageData = bitmap.representation(using: NSPNGFileType, properties: [:])
+            break
+        case "bmp":
+            imageData = bitmap.representation(using: NSBMPFileType, properties: [:])
+        case "tiff":
+            imageData = bitmap.representation(using: NSTIFFFileType, properties: [:])
+        default:
+            print("Error: Invalid image file extension \"\(outputPath.pathExtension.lowercased())\" used.")
+            return false
+        }
+        
+        //Generate an image from the bitmap data
         do{
-            try pngData?.write(to: outputPath)
+            try imageData?.write(to: outputPath)
         }catch{
+            print("Failed to write image file")
             return false
         }
         return true
     }
-
 }

@@ -11,6 +11,7 @@
 		87C0BB091EA448920084A9D2 /* SwImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0BB081EA448920084A9D2 /* SwImageTests.swift */; };
 		87C0BB0B1EA448920084A9D2 /* SwImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 87C0BAFD1EA448920084A9D2 /* SwImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87C0BB151EA448ED0084A9D2 /* SwImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0BB141EA448ED0084A9D2 /* SwImage.swift */; };
+		87C121EF1EA59C6700499FCE /* Pom.png in Resources */ = {isa = PBXBuildFile; fileRef = 87C121EE1EA59C6700499FCE /* Pom.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		87C0BB081EA448920084A9D2 /* SwImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwImageTests.swift; sourceTree = "<group>"; };
 		87C0BB0A1EA448920084A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C0BB141EA448ED0084A9D2 /* SwImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwImage.swift; sourceTree = "<group>"; };
+		87C121EE1EA59C6700499FCE /* Pom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pom.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		87C0BB071EA448920084A9D2 /* SwImageTests */ = {
 			isa = PBXGroup;
 			children = (
+				87C121EE1EA59C6700499FCE /* Pom.png */,
 				87C0BB081EA448920084A9D2 /* SwImageTests.swift */,
 				87C0BB0A1EA448920084A9D2 /* Info.plist */,
 			);
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C121EF1EA59C6700499FCE /* Pom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +330,7 @@
 		87C0BB0F1EA448920084A9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -349,6 +354,7 @@
 		87C0BB101EA448920084A9D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -415,6 +421,7 @@
 				87C0BB101EA448920084A9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87C0BB111EA448920084A9D2 /* Build configuration list for PBXNativeTarget "SwImageTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +430,7 @@
 				87C0BB131EA448920084A9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
