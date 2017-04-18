@@ -11,14 +11,18 @@ import XCTest
 
 class SwImageTests: XCTestCase {
     
+    ///Helper file manager
     let fileManager = FileManager.default
     
+    ///
     var testPngImage : NSImage?
     
     ///Base path to test with
     let testBasePath = URL(fileURLWithPath: "/Users/alexanderstein/Desktop/Programming/Projects/iOS + Mac/SwImage/SwImageTests/")
     let testOutputFolderName = "testOutput"
+    ///Name of main test image
     let testImageName = "Pom.png"
+    ///Name of main output image
     let testImageOutputName = "output.png"
     
     ///Path for to get to the pom.jpg test image
