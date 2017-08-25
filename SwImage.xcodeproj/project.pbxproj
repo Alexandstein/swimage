@@ -33,6 +33,7 @@
 		87C0BB0A1EA448920084A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C0BB141EA448ED0084A9D2 /* SwImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwImage.swift; sourceTree = "<group>"; };
 		87C121EE1EA59C6700499FCE /* Pom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pom.png; sourceTree = "<group>"; };
+		87C1220C1EA5CF1C00499FCE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		87C0BAF01EA448920084A9D2 = {
 			isa = PBXGroup;
 			children = (
+				87C1220C1EA5CF1C00499FCE /* README.md */,
 				87C0BAFC1EA448920084A9D2 /* SwImage */,
 				87C0BB071EA448920084A9D2 /* SwImageTests */,
 				87C0BAFB1EA448920084A9D2 /* Products */,

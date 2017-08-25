@@ -34,7 +34,7 @@ class SwImageTests: XCTestCase {
     ///Invalid pathway
     var testImagePath_inavalid : URL{
         get{
-            return testBasePath.appendingPathComponent("Nonexistent Pathsdfssd")
+            return testBasePath.appendingPathComponent("adsajksda/Nonexistent Pathsdfssd.png")
         }
     }
     
@@ -93,16 +93,14 @@ class SwImageTests: XCTestCase {
         XCTAssert(testPngImage == nil)
     }
     
+    //Test whether image is able to write be written to file
     func testWriteImageToFile_Success(){
         let success = SwImage.writeImageToFile(testPngImage!, outputPath: testImageOutputFilePath)
         XCTAssert(success)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testWriteImageToFile_Failed(){
+        let success = SwImage.writeImageToFile(testPngImage!, outputPath: testImagePath_inavalid)
+        XCTAssert(!success)
     }
-    
 }

@@ -60,26 +60,29 @@ class SwImage{
         bitmap.size = image.size
         
         var imageData : Data?
+        var imageFileType : NSBitmapImageFileType?
         
         //Check the extension
         switch outputPath.pathExtension.lowercased() {
         case "jpg":
             fallthrough
         case "jpeg":
-            imageData = bitmap.representation(using: NSJPEGFileType, properties: [:])
+            imageFileType = NSJPEGFileType
         case "gif":
-            imageData = bitmap.representation(using: NSGIFFileType, properties: [:])
+            imageFileType = NSGIFFileType
         case "png":
-            imageData = bitmap.representation(using: NSPNGFileType, properties: [:])
+            imageFileType = NSPNGFileType
             break
         case "bmp":
-            imageData = bitmap.representation(using: NSBMPFileType, properties: [:])
+            imageFileType = NSBMPFileType
         case "tiff":
-            imageData = bitmap.representation(using: NSTIFFFileType, properties: [:])
+            imageFileType = NSTIFFFileType
         default:
             print("Error: Invalid image file extension \"\(outputPath.pathExtension.lowercased())\" used.")
             return false
         }
+        
+        imageData = bitmap.representation(using: imageFileType!, properties: [:])
         
         //Generate an image from the bitmap data
         do{
